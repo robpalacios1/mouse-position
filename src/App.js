@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+const styles = {
+  height: '200px',
+  background: 'gold',
+  padding: '1em',
+  boxSizing: 'border-box'
 }
 
-export default App;
+
+class App extends Component{
+  state = {
+    x: 0,
+    y: 0
+  }
+
+  manejador = (event) => {
+    this.setState({
+      x: event.clientX,
+      y: event.clientY,
+    })
+  }
+  render(){
+    return(
+      <div
+        style={styles}
+        onMouseMove={this.manejador}
+      >
+        <div>
+          x: {this.state.x}
+        </div>
+        <div>
+          y: {this.state.y}
+        </div>
+      </div>
+    )
+  }
+}
+
+
+
+export default App
