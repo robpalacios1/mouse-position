@@ -1,14 +1,11 @@
 import React, { Component } from 'react'
 
-
-
 const styles = {
   height: '200px',
   background: 'gold',
   padding: '1em',
   boxSizing: 'border-box'
 }
-
 
 class App extends Component{
   state = {
@@ -38,7 +35,5 @@ class App extends Component{
     )
   }
 }
-
-
 
 export default App
